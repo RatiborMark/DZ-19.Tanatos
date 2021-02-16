@@ -1,0 +1,11 @@
+@import "_variables";
+
+@mixin font($font-family, $color) {
+    font-family: $font-family;
+    color: $color;
+}
+
+@mixin rem($size) {
+  font-size: $size / 16 * 1rem;
+}
+

@@ -1,0 +1,187 @@
+@import "_variables";
+@import "mixin";
+
+.ourTeam {
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        padding-bottom: 130px;
+
+        &-supTitle {
+            @include font("OpenSans-SemiBold", $c-text);
+            @include rem(35);
+            text-transform: uppercase;
+            padding-bottom: 30px;
+
+            &__text {
+                color: $c-item;
+            }
+
+        }
+
+        &-text {
+            @include font("OpenSans-Regular", $c-text);
+            @include rem(16);
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 992px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 100px;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 260px;
+            padding-left: 15px;
+            padding-right: 15px;
+            filter: grayscale(100%);
+            transition: all .7s;
+
+            &:hover {
+                filter: grayscale(0%);
+            }
+
+            &:hover &__img {
+                transform: scale(1.1);
+            }
+
+            &:hover &__img::before {
+                width: 50%;
+                left: 0;
+            }
+
+            &:hover &__img::after {
+                width: 50%;
+            }
+
+            &__img {
+                display: inline-block;
+                position: relative;
+                transition: .5s;
+
+                &::before {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    height: 5px;
+                    width: 0;
+                    background: $c-item;
+                    transition: width .3s ease-in-out, left .3s ease-in-out;
+                    left: 50%;
+                    bottom: 0;
+                    border-top-left-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                }
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    height: 5px;
+                    width: 0;
+                    background: $c-item;
+                    transition: width .3s ease-in-out;
+                    left: 50%;
+                    bottom: 0;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+
+                }
+            }
+
+            &__name {
+                @include font("OpenSans-SemiBold", $c-text);
+                @include rem(25);
+                text-transform: uppercase;
+                padding: 30px 0 30px;
+            }
+
+            &__links {
+                padding-bottom: 30px;
+
+                .fa {
+                    padding: 5px;
+                    font-size: 18px;
+                    width: 30px;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 50%;
+
+                    &-facebook {
+                        background: #205b9f;
+                        color: #fff;
+                    }
+
+                    &-twitter {
+                        background: #00ace3;
+                        color: #fff;
+                    }
+
+                    &-google-plus {
+                        background: #ff3921;
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+
+                    &:nth-child(2) {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            &__text {
+                @include font("OpenSans-Regular", $c-text);
+                @include rem(14);
+                text-align: center;
+            }
+        }
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        &-item {
+            width: 20px;
+            height: 20px;
+            background: #c4c6c9;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .5s;
+
+            &:nth-child(2) {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            &:nth-child(3) {
+                margin-right: 20px;
+            }
+
+            &:hover {
+                width: 30px;
+                height: 30px;
+                background: $c-item;
+            }
+        }
+    }
+}
