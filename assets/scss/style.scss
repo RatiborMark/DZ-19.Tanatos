@@ -4,6 +4,8 @@
 @import "ourServices";
 @import "newLetter";
 @import "ourTeam";
+@import "contact";
+@import "footer";
 
 * {
     box-sizing: border-box;
@@ -24,36 +26,36 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 
-}
-
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px;
+    @media (min-width: 576px) {
+        .container {
+            max-width: 540px;
+        }
     }
-}
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
+    @media (min-width: 768px) {
+        .container {
+            max-width: 720px;
+        }
     }
-}
 
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
+    @media (min-width: 992px) {
+        .container {
+            max-width: 960px;
+        }
     }
-}
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1140px;
+        }
     }
-}
 
-@media (min-width: 1440px) {
-    .container {
-        max-width: 1200px;
+    @media (min-width: 1440px) {
+        .container {
+            max-width: 1200px;
+        }
     }
+
 }
 
 @keyframes bounce {
